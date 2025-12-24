@@ -1,0 +1,4344 @@
+
+<html>
+<head>
+    <title>GPS Signal Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+        #map { height: 600px; width: 100%; }
+        body { margin: 20px; font-family: Arial; }
+        .legend { display: flex; justify-content: center; margin: 10px 0; }
+        .legend-item { display: flex; align-items: center; margin: 0 10px; }
+        .legend-color { width: 20px; height: 20px; margin-right: 5px; border: 1px solid #666; }
+    </style>
+</head>
+<body>
+    <h1>GPS Signal Strength (287 points)</h1>
+    
+    <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background:#00ff00"></div>≥ -80 dBm</div>
+        <div class="legend-item"><div class="legend-color" style="background:#90ee90"></div>-90 to -80</div>
+        <div class="legend-item"><div class="legend-color" style="background:#ffff00"></div>-100 to -90</div>
+        <div class="legend-item"><div class="legend-color" style="background:#ffa500"></div>-110 to -100</div>
+        <div class="legend-item"><div class="legend-color" style="background:#ff0000"></div>< -110 dBm</div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([54.9790631, 82.8120822], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+        
+        // Добавляем точки с цветами
+        
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 1<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 2<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 3<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 4<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 5<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 6<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 7<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 8<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 9<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 10<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 11<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 12<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 13<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 14<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 15<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 16<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 17<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 18<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 19<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 20<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 21<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 22<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 23<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 24<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 25<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 26<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 27<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 28<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 29<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 30<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 31<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 32<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 33<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 34<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 35<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 36<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 37<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 38<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 39<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 40<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 41<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 42<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 43<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 44<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 45<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 46<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 47<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 48<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 49<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 50<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 51<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 52<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 53<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 54<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 55<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 56<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 57<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 58<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 59<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 60<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 61<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 62<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 63<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 64<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 65<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 66<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 67<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -110 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 68<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 69<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 70<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 71<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 72<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -116 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 73<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -116 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 74<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 75<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -115 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 76<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -115 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 77<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -115 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 78<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -115 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 79<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -115 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 80<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 81<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 82<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 83<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -113 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 84<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -113 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 85<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -113 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 86<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -113 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 87<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 88<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 89<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 90<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 91<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 92<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 93<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 94<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 95<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 96<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -111 dBm
+            `);
+        
+
+            L.circleMarker([54.9790631, 82.8120822], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 97<br>
+                Lat: 54.979063<br>
+                Lon: 82.812082<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 98<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 99<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 100<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 101<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -92 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 102<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -92 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 103<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 104<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 105<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 106<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 107<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 108<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 109<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 110<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 111<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 112<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 113<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 114<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 115<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 116<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 117<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 118<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 119<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 120<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 121<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 122<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 123<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 124<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -98 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 125<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -98 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 126<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 127<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 128<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 129<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 130<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 131<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 132<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 133<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 134<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 135<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 136<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 137<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 138<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 139<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 140<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 141<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 142<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 143<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 144<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 145<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 146<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 147<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 148<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -98 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 149<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -98 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 150<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 151<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 152<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 153<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 154<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 155<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 156<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 157<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 158<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 159<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 160<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 161<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 162<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 163<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 164<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 165<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 166<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 167<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 168<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 169<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 170<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 171<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 172<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 173<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 174<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 175<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 176<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 177<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 178<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 179<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 180<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 181<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 182<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 183<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 184<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 185<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 186<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 187<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 188<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 189<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 190<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 191<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 192<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 193<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 194<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 195<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 196<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 197<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 198<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 199<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 200<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 201<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 202<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 203<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 204<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 205<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 206<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 207<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 208<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 209<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 210<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -97 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 211<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 212<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 213<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 214<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 215<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.97845718, 82.80846977], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 216<br>
+                Lat: 54.978457<br>
+                Lon: 82.808470<br>
+                RSRP: -76 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 217<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 218<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.97817323, 82.80859417], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 219<br>
+                Lat: 54.978173<br>
+                Lon: 82.808594<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.9783412, 82.80855309], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 220<br>
+                Lat: 54.978341<br>
+                Lon: 82.808553<br>
+                RSRP: -81 dBm
+            `);
+        
+
+            L.circleMarker([54.97864656, 82.8085422], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 221<br>
+                Lat: 54.978647<br>
+                Lon: 82.808542<br>
+                RSRP: -81 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 222<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 223<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -108 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 224<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -105 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 225<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -122 dBm
+            `);
+        
+
+            L.circleMarker([54.97816838, 82.80857974], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 226<br>
+                Lat: 54.978168<br>
+                Lon: 82.808580<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.97873045, 82.80850315], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 227<br>
+                Lat: 54.978730<br>
+                Lon: 82.808503<br>
+                RSRP: -72 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 228<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 229<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -129 dBm
+            `);
+        
+
+            L.circleMarker([54.97871637, 82.8085205], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 230<br>
+                Lat: 54.978716<br>
+                Lon: 82.808521<br>
+                RSRP: -79 dBm
+            `);
+        
+
+            L.circleMarker([54.97828661, 82.80855051], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 231<br>
+                Lat: 54.978287<br>
+                Lon: 82.808551<br>
+                RSRP: -85 dBm
+            `);
+        
+
+            L.circleMarker([54.97822125, 82.80846415], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 232<br>
+                Lat: 54.978221<br>
+                Lon: 82.808464<br>
+                RSRP: -80 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 233<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.97835379, 82.80857476], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 234<br>
+                Lat: 54.978354<br>
+                Lon: 82.808575<br>
+                RSRP: -86 dBm
+            `);
+        
+
+            L.circleMarker([54.9790081, 82.8111548], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 235<br>
+                Lat: 54.979008<br>
+                Lon: 82.811155<br>
+                RSRP: -90 dBm
+            `);
+        
+
+            L.circleMarker([54.97859437, 82.80844744], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 236<br>
+                Lat: 54.978594<br>
+                Lon: 82.808447<br>
+                RSRP: -74 dBm
+            `);
+        
+
+            L.circleMarker([54.9631419, 82.8295337], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 237<br>
+                Lat: 54.963142<br>
+                Lon: 82.829534<br>
+                RSRP: -98 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 238<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.97850483, 82.8085925], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 239<br>
+                Lat: 54.978505<br>
+                Lon: 82.808593<br>
+                RSRP: -80 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 240<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 241<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 242<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 243<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -98 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 244<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 245<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -124 dBm
+            `);
+        
+
+            L.circleMarker([54.97875451, 82.80851468], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 246<br>
+                Lat: 54.978755<br>
+                Lon: 82.808515<br>
+                RSRP: -75 dBm
+            `);
+        
+
+            L.circleMarker([54.97839594, 82.80848279], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 247<br>
+                Lat: 54.978396<br>
+                Lon: 82.808483<br>
+                RSRP: -80 dBm
+            `);
+        
+
+            L.circleMarker([54.97867055, 82.80849347], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 248<br>
+                Lat: 54.978671<br>
+                Lon: 82.808493<br>
+                RSRP: -72 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 249<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 250<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -109 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 251<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -100 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 252<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -122 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 253<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -76 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 254<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -102 dBm
+            `);
+        
+
+            L.circleMarker([54.97852282, 82.80845849], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 255<br>
+                Lat: 54.978523<br>
+                Lon: 82.808458<br>
+                RSRP: -69 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 256<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -117 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 257<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 258<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.97823836, 82.80872159], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 259<br>
+                Lat: 54.978238<br>
+                Lon: 82.808722<br>
+                RSRP: -79 dBm
+            `);
+        
+
+            L.circleMarker([54.97817323, 82.80859417], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 260<br>
+                Lat: 54.978173<br>
+                Lon: 82.808594<br>
+                RSRP: -115 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 261<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -107 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 262<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -79 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 263<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 264<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -125 dBm
+            `);
+        
+
+            L.circleMarker([54.97857611, 82.80858087], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 265<br>
+                Lat: 54.978576<br>
+                Lon: 82.808581<br>
+                RSRP: -80 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 266<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -122 dBm
+            `);
+        
+
+            L.circleMarker([54.97819881, 82.80849633], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 267<br>
+                Lat: 54.978199<br>
+                Lon: 82.808496<br>
+                RSRP: -89 dBm
+            `);
+        
+
+            L.circleMarker([54.97844711, 82.80858054], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 268<br>
+                Lat: 54.978447<br>
+                Lon: 82.808581<br>
+                RSRP: -79 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 269<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -114 dBm
+            `);
+        
+
+            L.circleMarker([54.97817323, 82.80859417], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 270<br>
+                Lat: 54.978173<br>
+                Lon: 82.808594<br>
+                RSRP: -129 dBm
+            `);
+        
+
+            L.circleMarker([54.9631419, 82.8295337], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 271<br>
+                Lat: 54.963142<br>
+                Lon: 82.829534<br>
+                RSRP: -119 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 272<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 273<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 274<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -106 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 275<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -103 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 276<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -101 dBm
+            `);
+        
+
+            L.circleMarker([54.97844781, 82.80848302], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 277<br>
+                Lat: 54.978448<br>
+                Lon: 82.808483<br>
+                RSRP: -84 dBm
+            `);
+        
+
+            L.circleMarker([54.97825869, 82.8084796], {
+                radius: 8,
+                fillColor: '#90ee90',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 278<br>
+                Lat: 54.978259<br>
+                Lon: 82.808480<br>
+                RSRP: -82 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 279<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9631419, 82.8295337], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 280<br>
+                Lat: 54.963142<br>
+                Lon: 82.829534<br>
+                RSRP: -99 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ffff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 281<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -92 dBm
+            `);
+        
+
+            L.circleMarker([54.979903, 82.8029054], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 282<br>
+                Lat: 54.979903<br>
+                Lon: 82.802905<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.97846115, 82.80851646], {
+                radius: 8,
+                fillColor: '#00ff00',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 283<br>
+                Lat: 54.978461<br>
+                Lon: 82.808516<br>
+                RSRP: -72 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 284<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -120 dBm
+            `);
+        
+
+            L.circleMarker([54.9782719, 82.8104102], {
+                radius: 8,
+                fillColor: '#ffa500',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 285<br>
+                Lat: 54.978272<br>
+                Lon: 82.810410<br>
+                RSRP: -104 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 286<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -112 dBm
+            `);
+        
+
+            L.circleMarker([54.9803981, 82.8112528], {
+                radius: 8,
+                fillColor: '#ff0000',
+                color: '#000',
+                weight: 1,
+                opacity: 0.8,
+                fillOpacity: 0.6
+            }).addTo(map).bindPopup(`
+                Point 287<br>
+                Lat: 54.980398<br>
+                Lon: 82.811253<br>
+                RSRP: -124 dBm
+            `);
+        
+        
+        // Автозум
+        var bounds = L.latLngBounds([[54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9790631, 82.8120822], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.979903, 82.8029054], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.979903, 82.8029054], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.979903, 82.8029054], [54.97845718, 82.80846977], [54.9803981, 82.8112528], [54.9803981, 82.8112528], [54.97817323, 82.80859417], [54.9783412, 82.80855309], [54.97864656, 82.8085422], [54.979903, 82.8029054], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9803981, 82.8112528], [54.97816838, 82.80857974], [54.97873045, 82.80850315], [54.9782719, 82.8104102], [54.9803981, 82.8112528], [54.97871637, 82.8085205], [54.97828661, 82.80855051], [54.97822125, 82.80846415], [54.979903, 82.8029054], [54.97835379, 82.80857476], [54.9790081, 82.8111548], [54.97859437, 82.80844744], [54.9631419, 82.8295337], [54.979903, 82.8029054], [54.97850483, 82.8085925], [54.9803981, 82.8112528], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.9803981, 82.8112528], [54.97875451, 82.80851468], [54.97839594, 82.80848279], [54.97867055, 82.80849347], [54.9782719, 82.8104102], [54.979903, 82.8029054], [54.9782719, 82.8104102], [54.979903, 82.8029054], [54.9803981, 82.8112528], [54.979903, 82.8029054], [54.97852282, 82.80845849], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.97823836, 82.80872159], [54.97817323, 82.80859417], [54.9782719, 82.8104102], [54.9803981, 82.8112528], [54.979903, 82.8029054], [54.979903, 82.8029054], [54.97857611, 82.80858087], [54.9803981, 82.8112528], [54.97819881, 82.80849633], [54.97844711, 82.80858054], [54.9803981, 82.8112528], [54.97817323, 82.80859417], [54.9631419, 82.8295337], [54.9782719, 82.8104102], [54.9782719, 82.8104102], [54.979903, 82.8029054], [54.9803981, 82.8112528], [54.9782719, 82.8104102], [54.97844781, 82.80848302], [54.97825869, 82.8084796], [54.9782719, 82.8104102], [54.9631419, 82.8295337], [54.9803981, 82.8112528], [54.979903, 82.8029054], [54.97846115, 82.80851646], [54.9803981, 82.8112528], [54.9782719, 82.8104102], [54.9803981, 82.8112528], [54.9803981, 82.8112528]]);
+        map.fitBounds(bounds);
+    </script>
+</body>
+</html>
