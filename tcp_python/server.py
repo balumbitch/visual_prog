@@ -1,14 +1,12 @@
-import socket
+import zmq
 import json
-import matplotlib.pyplot as plt
-from datetime import datetime
-import os
 import threading
 import psycopg2
+import os
+from datetime import datetime
+import matplotlib.pyplot as plt
 
-HOST = '0.0.0.0'
-PORT = 8080
-
+HOST = "tcp://*:8080"
 lats, lons, rsrps = [], [], []
 lock = threading.Lock()
 
@@ -22,20 +20,17 @@ def connect_db():
             port="5432"
         )
     except:
+        print("DB connection failed")
         return None
 
 def save_json(data):
     try:
         os.makedirs('gps_logs', exist_ok=True)
-        
         filename = f"gps_logs/gps_{datetime.now().strftime('%Y-%m-%d')}.json"
-        
         data['server_time'] = datetime.now().isoformat()
-        
         with open(filename, "a", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False)
             f.write("\n")
-        
         print(f"Saved to JSON: {filename}")
         return True
     except Exception as e:
@@ -49,8 +44,8 @@ def save_db(data):
             return False
             
         cur = conn.cursor()
-        
         loc = data['location']
+        
         cur.execute("""
             INSERT INTO locations (latitude, longitude, altitude, timestamp, speed, accuracy)
             VALUES (%s, %s, %s, %s, %s, %s) RETURNING id
@@ -143,75 +138,57 @@ def create_plot():
         
         print(f"Plot saved: {filename}")
 
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-server.bind((HOST, PORT))
-server.listen(5)
+context = zmq.Context()
+socket = context.socket(zmq.REP)
+socket.bind(HOST)
 
 print("=" * 50)
-print(f"GPS Tracking Server")
-print(f"Host: {HOST}:{PORT}")
-print(f"Saving: JSON + PostgreSQL")
+print("ZMQ GPS Tracking Server")
+print(f"Host: {HOST}")
+print("Saving: JSON + PostgreSQL")
 print("=" * 50)
 print("Waiting for connections...\n")
 
+count = 0
+
 try:
     while True:
-        client, addr = server.accept()
-        print(f"\nClient connected: {addr}")
+        message = socket.recv_string()
+        count += 1
         
-        client.settimeout(10)
-        count = 0
+        try:
+            json_data = json.loads(message)
+            
+            if 'location' in json_data:
+                loc = json_data['location']
+                rsrp = None
+                if 'cell_info_lte' in json_data:
+                    rsrp = json_data['cell_info_lte']['cell_signal_strength_lte'].get('rsrp')
+                
+                print(f"[{count}] Lat: {loc['latitude']:.6f}, Lon: {loc['longitude']:.6f}")
+                print(f"     RSRP: {rsrp} dBm | Speed: {loc['speed']:.1f} m/s")
+                
+                save_json(json_data)
+                save_db(json_data)
+                add_to_plot(json_data)
+                
+                response = f"OK#{count}"
+            else:
+                response = "ERROR: No location"
+                
+        except json.JSONDecodeError:
+            response = "ERROR: Bad JSON"
         
-        while True:
-            try:
-                data = client.recv(4096).decode().strip()
-                if not data:
-                    break
-                
-                count += 1
-                
-                try:
-                    json_data = json.loads(data)
-                    
-                    if 'location' in json_data:
-                        loc = json_data['location']
-                        rsrp = None
-                        if 'cell_info_lte' in json_data:
-                            rsrp = json_data['cell_info_lte']['cell_signal_strength_lte'].get('rsrp')
-                        
-                        print(f"[{count}] Lat: {loc['latitude']:.6f}, Lon: {loc['longitude']:.6f}")
-                        print(f"     RSRP: {rsrp} dBm | Speed: {loc['speed']:.1f} m/s")
-                        
-                        save_json(json_data) 
-                        save_db(json_data)    
-                        add_to_plot(json_data) 
-                        
-                        response = f"OK#{count}"
-                    else:
-                        response = "ERROR: No location"
-                        
-                except json.JSONDecodeError:
-                    response = "ERROR: Bad JSON"
-                
-                client.send((response + "\n").encode())
-                
-            except socket.timeout:
-                continue
-            except (ConnectionResetError, BrokenPipeError):
-                print(f"Connection closed by {addr}")
-                break
-            except Exception as e:
-                print(f"Error: {e}")
-                break
-        
-        client.close()
-        print(f"Client disconnected: {addr} ({count} messages)")
-        
-        create_plot()
+        socket.send_string(response)
 
 except KeyboardInterrupt:
     print("\n\nServer stopped by user")
+    create_plot()
+    
+except Exception as e:
+    print(f"Error: {e}")
+    
 finally:
-    server.close()
+    socket.close()
+    context.term()
     print("Server closed")
