@@ -1,0 +1,3 @@
+[submodule "labs_android"]
+	path = labs_android
+	url = https://github.com/balumbitch/labs_android.git
